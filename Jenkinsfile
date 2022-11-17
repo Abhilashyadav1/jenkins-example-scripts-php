@@ -14,8 +14,13 @@ pipeline {
     stage('codequality') {
       steps {
         withSonarQubeEnv('SonarQube') {
-          sh 'mvn clean package sonar:sonar'
+          sh './gradlew sonarqube'
         }  
+      }
+    }
+    stage("Quality gate") {
+      steps {
+        waitForQualityGate abortPipeline: true
       }
     }
   }
