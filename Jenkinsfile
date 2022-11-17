@@ -14,7 +14,7 @@ pipeline {
         stage('codequality') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh './gradlew sonarqube'
+                    sh 'build prjoect for repository'
                 }
             }
         }
