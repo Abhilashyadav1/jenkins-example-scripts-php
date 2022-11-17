@@ -14,8 +14,7 @@ pipeline {
         stage('codequality') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh 'mvn clean package sonar:sonar'
-                    sh "mvn clean verify"
+                    sh 'mvn clean package'
                 }
             }
         }
