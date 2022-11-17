@@ -11,9 +11,11 @@ pipeline {
         sh 'php hello.php'
       }
     }
-    stage('hello') {
+    stage('codequality') {
       steps {
-        sh 'php hello.php'
+        withSonarQubeEnv('My SonarQube Server') {
+          sh 'mvn clean package sonar:sonar'
+        }  
       }
     }
   }
