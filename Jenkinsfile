@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('install') {
       steps {
-        sh 'install php latest'
+        sh 'php --version'
       }
     }
     stage('hello') {
