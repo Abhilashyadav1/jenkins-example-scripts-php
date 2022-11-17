@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('verify version') {
+    stage('install') {
       steps {
-        sh 'php --version'
+        sh 'install php'
       }
     }
     stage('hello') {
