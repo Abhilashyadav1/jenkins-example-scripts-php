@@ -11,12 +11,9 @@ pipeline {
                 sh 'php hello.php'
             }
         }
-        stage('Sonarqube') {
-            environment {
-                scannerHome = tool 'SonarQubeScanner'
-            }
+        stage('SonarQube') {
             steps {
-                withSonarQubeEnv('sonarqube') {
+                withSonarQubeEnv('SonarQube') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
                 timeout(time: 10, unit: 'MINUTES') {
