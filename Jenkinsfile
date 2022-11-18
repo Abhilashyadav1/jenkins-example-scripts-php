@@ -14,9 +14,8 @@ pipeline {
         stage('codequality') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh" ${SCANNER_HOME}}/bin/sonar-scanner \
-                    -Dsonar.projectKey=simple_webapp \
-                    -Dsonar.sources=. "   
+                    sh"/root/sonarqube-8.9.10.61524/bin/linux-x86-64/sonar-scanner-4.7.0.2747-linux/conf/sonar- 
+scanner.properties
                 }
             }
         }
