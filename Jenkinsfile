@@ -19,7 +19,7 @@ sonar-scanner \\
   -Dsonar.projectKey=sample \\
   -Dsonar.sources=. \\
   -Dsonar.host.url=http://184.72.166.153:9000 \\
-  -Dsonar.login=sonar'''
+  -Dsonar.login=admin'''
                 }
             }
         }
